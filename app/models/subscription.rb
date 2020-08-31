@@ -17,4 +17,10 @@ class Subscription
             subscription.cost
         end.inject(0,:+)
     end
+
+    def self.find_subscription(magazine)
+        self.all.select do |subscription|
+            subscription.magazine == magazine
+        end
+    end
 end
